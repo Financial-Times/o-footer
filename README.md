@@ -2,6 +2,9 @@
 
 Origami module for the responsive FT page footer.
 
+# Browser support
+This module has been verified in Internet Explorer 7+, modern desktop browsers (Chrome, Safari, Firefox, ...) and mobile browsers (Android browser, iOS safari, Chrome mobile).
+
 ## Template
 
 `main.mustache` expects a `footer` object, containing three properties:
