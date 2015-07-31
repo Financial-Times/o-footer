@@ -9,14 +9,16 @@ $o-footer-spacing-unit: 20px;
 
 @include oColorsSetUseCase(o-footer, background, 'grey-tint5');
 @include oColorsSetUseCase(o-footer, text, 'white');
-@include oColorsSetUseCase(o-footer__pearson, background, 'grey-tint4');
+@include oColorsSetUseCase(o-footer__pearson, background, 'grey-tint4'); // Deprecated
+@include oColorsSetUseCase(o-footer__parentcompany, background, 'grey-tint4');
 @include oColorsSetUseCase(o-footer__divider, border, 'white');
 @include oColorsSetUseCase(o-footer-item, text, 'white');
 @include oColorsSetUseCase(o-footer__copyright, text, 'grey-tint2');
 
 @include oColorsSetUseCase(o-footer--theme-light, background, 'pink-tint1');
 @include oColorsSetUseCase(o-footer--theme-light, text, 'grey-tint5');
-@include oColorsSetUseCase(o-footer--theme-light__pearson, background, 'pink-tint4');
+@include oColorsSetUseCase(o-footer--theme-light__pearson, background, 'pink-tint4'); // Deprecated
+@include oColorsSetUseCase(o-footer--theme-light__parentcompany, background, 'pink-tint4');
 @include oColorsSetUseCase(o-footer--theme-light__divider, border, 'pink-tint3');
 @include oColorsSetUseCase(o-footer--theme-light-item, text, 'grey-tint5');
 @include oColorsSetUseCase(o-footer--theme-light__copyright, text, 'grey-tint3');
@@ -143,13 +145,13 @@ $o-footer-spacing-unit: 20px;
 
 .o-footer__pearson, // deprecated
 .o-footer__parentcompany {
-	background-color: oColorsGetColorFor(o-footer__pearson o-footer, background);
+	background-color: oColorsGetColorFor(o-footer__pearson o-footer__parentcompany o-footer, background);
 	padding-top: $o-footer-spacing-unit - 5;
 	padding-bottom: $o-footer-spacing-unit - 5;
 	color: oColorsGetColorFor(o-footer__pearson o-footer, text);
 
 	.o-footer--theme-light & {
-		background-color: oColorsGetColorFor(o-footer--theme-light__pearson o-footer, background);
+		background-color: oColorsGetColorFor(o-footer--theme-light__pearson o-footer--theme-light__parentcompany o-footer, background);
 		color: oColorsGetColorFor(o-footer--theme-light__pearson o-footer, text);
 	}
 }
