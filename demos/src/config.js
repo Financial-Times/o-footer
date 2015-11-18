@@ -1,6 +1,6 @@
 module.exports = {
 	options: {
-		sass: 'main.scss',
+		sass: 'demos/src/demos.scss',
 		data: {
 			'o-ft-footer': JSON.parse(require('fs').readFileSync(process.cwd() + '/footer.json', {encoding: 'utf8'}))
 		}
