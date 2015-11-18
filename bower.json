@@ -1,5 +1,5 @@
 {
-	"name": "o-ft-footer",
+	"name": "o-footer",
 	"main": ["main.scss"],
 	"ignore": [],
 	"dependencies": {
