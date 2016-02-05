@@ -1,5 +1,7 @@
 # Footer module [![Build Status](https://travis-ci.org/Financial-Times/o-footer.svg?branch=master)](https://travis-ci.org/Financial-Times/o-footer)
 
+***NOTE: This branch is a work in progress and for use by next.ft.com only***
+
 Origami module for the responsive FT page footer.
 
 ## Data
