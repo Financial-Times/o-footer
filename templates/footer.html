@@ -1,0 +1,53 @@
+<footer class="o-footer">
+	<div class="o-grid-container">
+		<div class="o-footer__nav o-grid-row n-util-hide-js" id="footer-nav">
+			<ol class="o-footer__items o-footer__items--top-level" data-o-grid-colspan="12 XS6 S4 M3">
+				{{#each nav}}
+					{{#unless children}}
+						<li class="o-footer__item o-footer__item--top-level">
+							<a href="{{href}}" class="o-footer__link" data-trackable="{{name}}">{{name}}</a>
+						</li>
+					{{/unless}}
+				{{/each}}
+
+				{{#ifAll flags.editionSwitcher editions}}
+					{{#each editions.others}}
+						<li class="o-footer__item o-footer__item--top-level">
+							<a href="/{{id}}?edition={{id}}" class="o-footer__link" data-trackable="{{id}}-edition">{{name}} Edition</a>
+						</li>
+					{{/each}}
+				{{/ifAll}}
+			</ol>
+			{{#each nav}}
+				{{#if children}}
+					<ol class="o-footer__items" data-o-grid-colspan="12 XS6 S4 M3">
+						<li class="o-footer__item o-footer__item--top-level">
+							<a href="{{href}}" class="o-footer__link" data-trackable="{{name}}">{{name}}</a>
+						</li>
+						{{#each children}}
+							<li class="o-footer__item">
+								<a href="{{href}}" class="o-footer__link" data-trackable="{{name}}">{{name}}</a>
+							</li>
+						{{/each}}
+					</ol>
+				{{/if}}
+			{{/each}}
+		</div>
+		<div class="o-footer__search o-grid-row n-util-hide-js" id="footer-search" data-trackable="footer-search">
+			<form class="o-forms-group" action="/search" data-o-grid-colspan="12">
+				<label class="o-footer__search-label o-forms-label" for="footer-search-term">Type to search the Financial Times</label>
+				<div class="o-forms-affix-wrapper">
+					<input id="o-footer__search-term" name="q" class="o-footer__search-term o-forms-text" type="search" data-trackable="search-term" placeholder="Type to search the FT" />
+					<div class="o-forms-suffix">
+						<input class="o-footer__search-submit o-buttons" type="submit" data-trackable="submit" value="Search" />
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="o-grid-row">
+			<div data-o-grid-colspan="12">
+				{{{content.inside}}}
+			</div>
+		</div>
+	</div>
+</footer>
