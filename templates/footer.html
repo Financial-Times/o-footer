@@ -10,13 +10,13 @@
 					{{/unless}}
 				{{/each}}
 
-				{{#ifAll flags.editionSwitcher editions}}
+				{{#if editions}}
 					{{#each editions.others}}
 						<li class="o-footer__item o-footer__item--top-level">
 							<a href="/{{id}}?edition={{id}}" class="o-footer__link" data-trackable="{{id}}-edition">{{name}} Edition</a>
 						</li>
 					{{/each}}
-				{{/ifAll}}
+				{{/if}}
 			</ol>
 			{{#each nav}}
 				{{#if children}}
