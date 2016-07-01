@@ -1,210 +1,221 @@
 @import "o-assets/main";
 @import "o-colors/main";
 @import "o-grid/main";
-@import "o-hoverable/main";
+@import "o-typography/main";
+@import "o-icons/main";
 
-/// Footer spacing unit
-/// @type Number
-$o-footer-spacing-unit: 20px;
+@import "src/scss/variables";
+@import "src/scss/colors";
 
-@include oColorsSetUseCase(o-footer, background, 'grey-tint5');
-@include oColorsSetUseCase(o-footer, text, 'white');
-@include oColorsSetUseCase(o-footer__brand, background, 'grey-tint4');
-@include oColorsSetUseCase(o-footer__divider, border, 'grey-tint3');
-@include oColorsSetUseCase(o-footer-item, text, 'white');
-@include oColorsSetUseCase(o-footer__copyright, text, 'grey-tint2');
-
-@include oColorsSetUseCase(o-footer--theme-light, background, 'pink-tint1');
-@include oColorsSetUseCase(o-footer--theme-light, text, 'grey-tint5');
-@include oColorsSetUseCase(o-footer--theme-light__brand, background, 'pink-tint4');
-@include oColorsSetUseCase(o-footer--theme-light__divider, border, 'pink-tint3');
-@include oColorsSetUseCase(o-footer--theme-light-item, text, 'grey-tint5');
-@include oColorsSetUseCase(o-footer--theme-light__copyright, text, 'grey-tint3');
+// maybe not good if o-grid should be in silent mode?
+@include oGridSurfaceCurrentLayout();
 
 .o-footer {
-	@include oColorsFor(o-footer, text background);
-	font-size: 16px;
+	@include oTypographySansSize('s');
 	margin-top: (2 * $o-footer-spacing-unit);
-	padding: 0;
-	border-top: 5px solid oColorsGetColorFor(o-footer-brand product-brand, background);
+	border-top: 10px solid;
 	line-height: $o-footer-spacing-unit;
-
-	ul {
-		list-style-type: none;
-		padding: 0;
-		margin-top: 0;
-		margin-bottom: 0;
-	}
 }
 
-.o-footer--theme-light {
-	@include oColorsFor(o-footer--theme-light, text background);
-	// Same colour as the divider
-	border-top-color: oColorsGetColorFor(o-footer--theme-light__divider, border);
-}
-
-.o-footer__title {
-	overflow: hidden;
-	width: 100%;
-	margin-top: 0;
-	margin-bottom: $o-footer-spacing-unit / 2;
-	text-transform: uppercase;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	font-weight: 600;
-	font-size: 1.1em;
-	color: oColorsGetColorFor(o-footer-item, text);
+.o-footer--theme-dark {
+	@include oColorsFor('o-footer--theme-dark', 'text' 'background');
+	border-color: oColorsGetColorFor('o-footer--theme-dark', 'border');
 
 	// Make the white text look crisper and less bold on dark backgrounds
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-
-	.o-footer--theme-light & {
-		color: oColorsGetColorFor(o-footer--theme-light-item, text);
-	}
 }
 
-.o-footer__link {
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	overflow: hidden;
-
-	> a {
-		display: block; // Make links easier to tap by increasing their hitzone
-		text-decoration: none;
-		padding: 5px 0;
-		color: oColorsGetColorFor(o-footer-item, text);
-
-		.o-footer--theme-light & {
-			color: oColorsGetColorFor(o-footer--theme-light-item, text);
-		}
-
-		#{$o-hoverable-if-hover-enabled} &:hover,
-		&:focus {
-			color: oColorsGetColorFor(link-title-hover, text);
-		}
-	}
-}
-
-.o-footer__section-link > a {
-	text-transform: uppercase;
-}
-
-.o-footer__nav {
-	margin-top: $o-footer-spacing-unit;
-	margin-bottom: $o-footer-spacing-unit;
-}
-
-.o-footer__divider {
-	$_o-footer-compensate-line-height: 3px;
-	margin-top: $o-footer-spacing-unit - $_o-footer-compensate-line-height;
-	border-bottom: oColorsGetColorFor(o-footer__divider, border) dotted 1px;
-
-	.o-footer--theme-light & {
-		border-bottom-color: oColorsGetColorFor(o-footer--theme-light__divider, border);
-	}
-}
-
-.o-footer__link-lists {
-	margin-top: $o-footer-spacing-unit;
-}
-.o-footer__link-list {
-	padding-top: (2 * $o-footer-spacing-unit);
-	margin-bottom: (1 * $o-footer-spacing-unit);
-
-	> ul {
-		margin: 0;
-	}
-	> .o-footer__title {
-		margin-top: (-2 * $o-footer-spacing-unit);
-	}
+.o-footer--theme-light {
+	@include oColorsFor('o-footer--theme-light', 'text' 'background');
+	border-color: oColorsGetColorFor('o-footer--theme-light', 'border');
 }
 
 .o-footer__container {
 	@include oGridContainer;
 }
+
 .o-footer__row {
+	margin-top: $o-footer-spacing-unit;
+}
+
+.o-footer__matrix {
 	@include oGridRow;
+	position: relative;
 }
-.o-footer__col {
-	@include oGridColspan((default: 12, S: 6, M: 4, L: 3, XL: 2));
+
+.o-footer__matrix-title,
+.o-footer__matrix-link {
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
-.o-footer__col--full-width {
-	@include oGridColspan(full-width, $width-only: true);
+
+.o-footer__matrix-title {
+	margin: 0 0 $o-footer-spacing-unit;
+	line-height: inherit;
+	font-size: inherit;
+	font-weight: 600;
+
+	&[aria-expanded] {
+		$icon-size: 14;
+		$line-height: $o-footer-spacing-unit * 2;
+
+		position: relative;
+		// collapse borders between collapsed columns
+		margin-bottom: -1px;
+		border-top: 1px dotted;
+		border-bottom: 1px dotted;
+		line-height: $line-height;
+		cursor: pointer;
+
+		&:after {
+
+			content: ' ';
+			position: absolute;
+			right: 0;
+			top: ($line-height - $icon-size) / 2;
+
+			.o-footer--theme-dark & {
+				@include oIconsGetIcon('arrow-down', oColorsGetColorFor('o-footer--theme-dark', 'text'), 14);
+			}
+
+			.o-footer--theme-light & {
+				@include oIconsGetIcon('arrow-down', oColorsGetColorFor('o-footer--theme-light', 'text'), 14);
+			}
+		}
+
+	}
+
+	&[aria-expanded="true"] {
+		margin-bottom: $o-footer-spacing-unit / 2;
+
+		&:after {
+			// don't download another icon...
+			transform: rotate(180deg);
+		}
+	}
+}
+
+.o-footer__matrix-column {
+	@include oGridColspan();
+}
+
+.o-footer__matrix-column--1 {
+	@include oGridColspan(('default': 6, 'M': 3, 'L': 3, 'XL': 2), $width-only: true);
+}
+
+.o-footer__matrix-column--2 {
+	@include oGridColspan(('default': 12, 'M': 6, 'L': 6, 'XL': 4), $width-only: true);
+}
+
+.o-footer__matrix-column--4 {
+	@include oGridColspan(('default': 12, 'XL': 8), $width-only: true);
+}
+
+.o-footer__matrix-column--6 {
+	@include oGridColspan(('default': 12), $width-only: true);
+}
+
+.o-footer__matrix-list {
+	margin: 0 0 $o-footer-spacing-unit;
+	padding: 0;
+	list-style: none;
+
+	@include oGridRespondTo('S') {
+		column-gap: oGridGutter('S');
+
+		.o-footer__matrix-column--2 &,
+		.o-footer__matrix-column--4 &,
+		.o-footer__matrix-column--6 & {
+			column-count: 2;
+		}
+	}
+
+	@include oGridRespondTo('M') {
+		column-gap: oGridGutter('M');
+
+		.o-footer__matrix-column--4 &,
+		.o-footer__matrix-column--6 & {
+			column-count: 4;
+		}
+	}
+
+	@include oGridRespondTo('XL') {
+		column-gap: oGridGutter('XL');
+
+		.o-footer__matrix-column--6 & {
+			column-count: 6;
+		}
+	}
+
+	&[aria-hidden="true"] {
+		display: none;
+	}
+}
+
+.o-footer__matrix-item {}
+
+.o-footer__matrix-link {
+	display: block;
+	padding: 4px 0;
+	text-decoration: none;
+
+	.o-footer--theme-dark & {
+		color: oColorsGetColorFor('o-footer--theme-dark__link', 'text');
+
+		&:hover,
+		&:focus {
+			color: oColorsGetColorFor('o-footer--theme-dark__link-hover', 'text');
+		}
+	}
+
+	.o-footer--theme-light & {
+		color: oColorsGetColorFor('o-footer--theme-light__link', 'text');
+
+		&:hover,
+		&:focus {
+			color: oColorsGetColorFor('o-footer--theme-light__link-hover', 'text');
+		}
+	}
 }
 
 .o-footer__copyright {
 	margin-top: $o-footer-spacing-unit;
 	margin-bottom: $o-footer-spacing-unit;
-	line-height: 1.3;
-	color: oColorsGetColorFor(o-footer__copyright, text);
 
-	span {
-		display: inline-block;
+	.o-footer--theme-dark & {
+		color: oColorsGetColorFor('o-footer--theme-dark__copyright', 'text');
 	}
 
 	.o-footer--theme-light & {
-		color: oColorsGetColorFor(o-footer--theme-light__copyright, text);
+		color: oColorsGetColorFor('o-footer--theme-light__copyright', 'text');
 	}
 }
 
-.o-footer__pearson, // deprecated
 .o-footer__brand {
-	background-color: oColorsGetColorFor(o-footer__brand o-footer, background);
 	padding-top: $o-footer-spacing-unit - 5;
 	padding-bottom: $o-footer-spacing-unit - 5;
-	color: oColorsGetColorFor(o-footer__brand o-footer, text);
+
+	.o-footer--theme-dark & {
+		background-color: oColorsGetColorFor('o-footer--theme-dark__brand', 'background');
+		color: oColorsGetColorFor('o-footer--theme-dark', 'text');
+	}
 
 	.o-footer--theme-light & {
-		background-color: oColorsGetColorFor(o-footer--theme-light__brand o-footer, background);
-		color: oColorsGetColorFor(o-footer--theme-light__brand o-footer, text);
+		background-color: oColorsGetColorFor('o-footer--theme-light__brand', 'background');
+		color: oColorsGetColorFor('o-footer--theme-light', 'text');
 	}
 }
 
-.o-footer__pearson-tagline, // deprecated
-.o-footer__pearson-logo, // deprecated
 .o-footer__brand-logo {
-	height: 19px;
-	background-image: url(oAssetsResolve("img/nikkei_logo.png", o-footer));
+	height: 20px;
+
+	// The weird value for rgba is to prevent Sass converting rgba(0,0,0,0) to 'transparent'
+	// which would cause the following line to be understood by IE7/8 and the svg to be downloaded
+	background: url(oAssetsResolve("img/nikkei_logo.png", o-footer));
+	background: rgba(0, 0, 0, 0.001) url(oAssetsResolve("img/nikkei_logo.svg", o-footer));
 	background-repeat: no-repeat;
-	white-space: nowrap;
-
-	// The weird value for rgba is to prevent Sass converting rgba(0,0,0,0) to 'transparent', which would cause the following line of css to be understood by IE7/8 and the svg to be downloaded
-	background: rgba(0, 0, 0, 0.001) url(oAssetsResolve("img/nikkei_logo.svg", o-footer)) no-repeat;
-}
-
-.o-footer__pearson-tagline { // deprecated
-	display: none;
-}
-
-.o-footer__pearson-logo, // deprecated
-.o-footer__brand-logo {
-	float: right;
-	width: 162px;
-	background-position: right 0;
-}
-
-@include oGridRespondTo($until: S) {
-	.o-footer__link-lists {
-		margin-top: 0;
-		margin-bottom: 2 * $o-footer-spacing-unit;
-	}
-	.o-footer__link-list {
-		margin-bottom: 0;
-		padding-top: 0;
-
-		> ul {
-			margin-top: 0;
-		}
-		> .o-footer__title {
-			position: static;
-			margin-top: 0;
-			margin-bottom: $o-footer-spacing-unit / 2;
-		}
-		+ .o-footer__link-list {
-			> .o-footer__title {
-				margin-top: $o-footer-spacing-unit;
-			}
-		}
-	}
+	background-position: right;
 }
