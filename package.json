@@ -12,20 +12,20 @@
     },
     "main": "main.js",
     "peerDependencies": {
-        "@financial-times/o-assets": "^100.0.0-4",
-        "@financial-times/o-brand": "^100.0.0-4",
-        "@financial-times/o-colors": "^100.0.0-4",
-        "@financial-times/o-grid": "^100.0.0-4",
-        "@financial-times/o-icons": "^100.0.0-4",
-        "@financial-times/o-normalise": "^100.0.0-4",
-        "@financial-times/o-spacing": "^100.0.0-4",
-        "@financial-times/o-toggle": "^100.0.0-4",
-        "@financial-times/o-typography": "^100.0.0-4",
-        "@financial-times/o-viewport": "^100.0.0-4"
+        "@financial-times/o-assets": "^100.0.0-5",
+        "@financial-times/o-brand": "^100.0.0-5",
+        "@financial-times/o-colors": "^100.0.0-5",
+        "@financial-times/o-grid": "^100.0.0-5",
+        "@financial-times/o-icons": "^100.0.0-5",
+        "@financial-times/o-normalise": "^100.0.0-5",
+        "@financial-times/o-spacing": "^100.0.0-5",
+        "@financial-times/o-toggle": "^100.0.0-5",
+        "@financial-times/o-typography": "^100.0.0-5",
+        "@financial-times/o-viewport": "^100.0.0-5"
     },
     "description": "Responsive footer for all FT.com pages. Includes legally approved links.",
     "publishConfig": {
         "registry": "http://localhost:4873"
     },
-    "version": "100.0.0-4"
+    "version": "100.0.0-5"
 }
