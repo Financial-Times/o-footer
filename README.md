@@ -135,7 +135,7 @@ See [demos in the registry for full markup examples](https://registry.origami.ft
 To include all o-footer css call the `oFooter` mixin. However, to keep your CSS bundle size low, we recommend using the `$opts` argument to include only the features you need.
 
 ```scss
-@import 'o-footer/main';
+@import '@financial-times/o-footer/main';
 @include oFooter();
 ```
 
