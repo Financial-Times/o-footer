@@ -74,8 +74,12 @@ The width of the columns and the way they collapse on smaller viewports may be c
 					</h3>
 					<div class="o-footer__matrix-content" id="o-footer-section-0">
 						<div class="o-footer__matrix-column">
-								<a class="o-footer__matrix-link" href="#"><!-- link 1 --></a>
-								<a class="o-footer__matrix-link" href="#"><!-- link 2 --></a>
+								<a class="o-footer__matrix-link" href="#">
+									<span class="o-footer__matrix-link__copy"><!-- link 1 --></span>
+								</a>
+								<a class="o-footer__matrix-link" href="#">
+									<span class="o-footer__matrix-link__copy"><!-- link 2 --></span>
+								</a>
 						</div>
 					</div>
 				</div>
@@ -86,32 +90,47 @@ The width of the columns and the way they collapse on smaller viewports may be c
 					</h3>
 					<div class="o-footer__matrix-content" id="o-footer-section-1">
 						<div class="o-footer__matrix-column">
-							<a class="o-footer__matrix-link" href="#"><!-- link 1 --></a>
-							<a class="o-footer__matrix-link" href="#"><!-- link 2 --></a>
+							<a class="o-footer__matrix-link" href="#">
+								<span class="o-footer__matrix-link__copy"><!-- link 1 --></span>
+							</a>
+							<a class="o-footer__matrix-link" href="#">
+								<span class="o-footer__matrix-link__copy"><!-- link 2 --></span>
+							</a>
 						</div>
 					</div>
 				</div>
 
-				<div class="o-footer__matrix-group o-footer__matrix-group--2">
+				<div class="o-footer__matrix-group o-footer__matrix-group--1">
 					<h3 class="o-footer__matrix-title" aria-controls="o-footer-section-2">
 						Services
 					</h3>
 					<div class="o-footer__matrix-content" id="o-footer-section-2">
 							<div class="o-footer__matrix-column">
-								<a class="o-footer__matrix-link" href="#"><!-- link 1 --></a>
-								<a class="o-footer__matrix-link" href="#"><!-- link 2 --></a>
+								<a class="o-footer__matrix-link" href="#">
+									<span class="o-footer__matrix-link__copy"><!-- link 1 --></span>
+								</a>
+								<a class="o-footer__matrix-link" href="#">
+									<span class="o-footer__matrix-link__copy"><!-- link 2 --></span>
+								</a>
 							</div>
 							<div class="o-footer__matrix-column">
-								<a class="o-footer__matrix-link" href="#"><!-- link 3 --></a>
-								<a class="o-footer__matrix-link" href="#"><!-- link 4 --></a>
+								<a class="o-footer__matrix-link" href="#">
+									<span class="o-footer__matrix-link__copy"><!-- link 3 --></span>
+								</a>
+								<a class="o-footer__matrix-link" href="#">
+									<span class="o-footer__matrix-link__copy"><!-- link 4 --></span>
+								</a>
 							</div>
 					</div>
 				</div>
+				<div class="o-footer__matrix-group o-footer__matrix-group--1">
+					<h3 class="o-footer__matrix-title o-footer__matrix-title--link">
+						<a class ='o-footer__matrix-link o-footer__matrix-link--more' id="o-footer-section-5" href="#">
+							<span class="o-footer__matrix-link__copy"><!-- link  --></span>
+						</a>
+					</h3>
+				</div>
 			</nav>
-
-			<h3 class="o-footer__external-link o-footer__matrix-title">
-				<a class="o-footer__more-from-ft o-footer__matrix-title" href="#"><!-- link --></a>
-			</h3>
 		</div>
 
 		<div class="o-footer__copyright">
@@ -185,8 +204,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 State | Major Version | Last Minor Release | Migration guide |
 :---: | :---: | :---: | :---:
-✨ active | 7 | N/A | [migrate to v7](MIGRATION.md#migrating-from-v6-to-v7) |
-⚠ maintained | 6 | 6.1 | [migrate to v6](MIGRATION.md#migrating-from-v5-to-v6) |
+✨ active | 9 | N/A | [migrate to v9](MIGRATION.md#migrating-from-v8-to-v9) |
+⚠ maintained | 8 | 8.0 | [migrate to v8](MIGRATION.md#migrating-from-v7-to-v8) |
+⚠ maintained | 7 | 7.0.12 | [migrate to v7](MIGRATION.md#migrating-from-v6-to-v7) |
+╳ deprecated | 6 | 6.1 | [migrate to v6](MIGRATION.md#migrating-from-v5-to-v6) |
 ╳ deprecated | 5 | 5.4 | [migrate to v5](MIGRATION.md#migrating-from-v4-to-v5) |
 ╳ deprecated | 4 | 4.1 | - |
 ╳ deprecated | 3 | 3.2 | - |
