@@ -75,10 +75,10 @@ The width of the columns and the way they collapse on smaller viewports may be c
 					<div class="o-footer__matrix-content" id="o-footer-section-0">
 						<div class="o-footer__matrix-column">
 								<a class="o-footer__matrix-link" href="#">
-									<span class="o-footer__matrix-link__copy"><!-- link 1 --></span>
+									<span><!-- link 1 --></span>
 								</a>
 								<a class="o-footer__matrix-link" href="#">
-									<span class="o-footer__matrix-link__copy"><!-- link 2 --></span>
+									<span><!-- link 2 --></span>
 								</a>
 						</div>
 					</div>
@@ -91,10 +91,10 @@ The width of the columns and the way they collapse on smaller viewports may be c
 					<div class="o-footer__matrix-content" id="o-footer-section-1">
 						<div class="o-footer__matrix-column">
 							<a class="o-footer__matrix-link" href="#">
-								<span class="o-footer__matrix-link__copy"><!-- link 1 --></span>
+								<span ><!-- link 1 --></span>
 							</a>
 							<a class="o-footer__matrix-link" href="#">
-								<span class="o-footer__matrix-link__copy"><!-- link 2 --></span>
+								<span><!-- link 2 --></span>
 							</a>
 						</div>
 					</div>
@@ -107,18 +107,18 @@ The width of the columns and the way they collapse on smaller viewports may be c
 					<div class="o-footer__matrix-content" id="o-footer-section-2">
 							<div class="o-footer__matrix-column">
 								<a class="o-footer__matrix-link" href="#">
-									<span class="o-footer__matrix-link__copy"><!-- link 1 --></span>
+									<span><!-- link 1 --></span>
 								</a>
 								<a class="o-footer__matrix-link" href="#">
-									<span class="o-footer__matrix-link__copy"><!-- link 2 --></span>
+									<span><!-- link 2 --></span>
 								</a>
 							</div>
 							<div class="o-footer__matrix-column">
 								<a class="o-footer__matrix-link" href="#">
-									<span class="o-footer__matrix-link__copy"><!-- link 3 --></span>
+									<span><!-- link 3 --></span>
 								</a>
 								<a class="o-footer__matrix-link" href="#">
-									<span class="o-footer__matrix-link__copy"><!-- link 4 --></span>
+									<span><!-- link 4 --></span>
 								</a>
 							</div>
 					</div>
